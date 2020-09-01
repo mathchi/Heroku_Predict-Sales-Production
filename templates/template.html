@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+  <title>Machine Learning Application</title>
+
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<center><body style="background-color:powderblue;">
+ <div class="login">
+    <br>
+	<br>
+	<br>
+	<h1 style="property:value;">Model Deployment Application for Sales Prediction</h1>
+	<br>
+	<br>
+     <!-- Model icin girdilerin alinacagi bolum -->
+	 <div class="container">
+		<center>
+		<form action="{{ url_for('predict')}}"method="post">
+			<input type="text" name="tv" placeholder="TV" required="required" />
+			<input type="text" name="radio" placeholder="Radio" required="required" />
+			<input type="text" name="newspaper" placeholder="Newspaper" required="required" />
+
+			<button type="submit" class="btn btn-primary">Predict</button>
+			
+		</form></center>
+	<br>
+	<br>
+{{ prediction_text }}
+   <br>
+   <br>
+   
+   
+
+ </div>
+
+
+</body></center>
+</html>
